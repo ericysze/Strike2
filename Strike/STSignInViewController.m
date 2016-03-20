@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
+@property (strong, nonatomic) UIView *indentView;
+
 @end
 
 @implementation STSignInViewController
@@ -34,15 +36,23 @@
 - (void)phoneNumberTextFieldSetup {
     self.phoneNumberTextField.delegate = self;
     
-    NSAttributedString *phoneNumberStr = [[NSAttributedString alloc] initWithString:@"   Phone Number" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:1.0 alpha:0.8] }];
+    NSAttributedString *phoneNumberStr = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:1.0 alpha:0.8] }];
     self.phoneNumberTextField.attributedPlaceholder = phoneNumberStr;
+
+    self.indentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    [self.phoneNumberTextField setLeftViewMode:UITextFieldViewModeAlways];
+    [self.phoneNumberTextField setLeftView:self.indentView];
 }
 
 - (void)passwordTextFieldSetup {
     self.passwordTextField.delegate = self;
     
-    NSAttributedString *passwordStr = [[NSAttributedString alloc] initWithString:@"   Password" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:1.0 alpha:0.8] }];
+    NSAttributedString *passwordStr = [[NSAttributedString alloc] initWithString:@"Password" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:1.0 alpha:0.8] }];
     self.passwordTextField.attributedPlaceholder = passwordStr;
+    
+    self.indentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    [self.passwordTextField setLeftViewMode:UITextFieldViewModeAlways];
+    [self.passwordTextField setLeftView:self.indentView];
 }
 
 - (void)loginButtonSetup {

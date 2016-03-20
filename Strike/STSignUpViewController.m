@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
+@property (strong, nonatomic) UIView *indentView;
+
 @end
 
 @implementation STSignUpViewController
@@ -19,12 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    [self phoneNumberTextFieldSetup];
 }
 
 - (void)phoneNumberTextFieldSetup {
-    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"   Phone Number" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:0.8 alpha:1.0] }];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:0.8 alpha:1.0] }];
     self.phoneNumberTextField.attributedPlaceholder = str;
+    
+    self.indentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    [self.phoneNumberTextField setLeftViewMode:UITextFieldViewModeAlways];
+    [self.phoneNumberTextField setLeftView:self.indentView];
 
 }
 
