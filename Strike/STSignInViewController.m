@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 @property (strong, nonatomic) UIView *indentView;
+@property (nonatomic, assign) id currentResponder;
 
 @end
 
@@ -29,7 +30,11 @@
     [self phoneNumberTextFieldSetup];
     [self passwordTextFieldSetup];
     [self loginButtonSetup];
+    
 
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignOnTap:)];
+    [self.view addGestureRecognizer:singleTap];
+    
 //    [self.signUpButton setAttributedTitle:[self underLineTextString:@"Sign up."] forState:UIControlStateNormal];
 }
 
@@ -74,6 +79,17 @@
     }
     return YES;
 }
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.currentResponder = textField;
+}
+
+
+- (void)resignOnTap:(id)sender {
+    [self.currentResponder resignFirstResponder];
+}
+
 
 
 //- (NSMutableAttributedString *)underLineTextString:(NSString *)str
