@@ -44,7 +44,7 @@
 - (void)phoneNumberTextFieldSetup {
     self.phoneNumberTextField.delegate = self;
     
-    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:0.8 alpha:1.0] }];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:1.0 alpha:0.8] }];
     self.phoneNumberTextField.attributedPlaceholder = str;
     
     self.indentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
