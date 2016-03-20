@@ -11,7 +11,7 @@
 
 @interface STSignInViewController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
@@ -23,13 +23,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.usernameTextField.delegate = self;
-    self.passwordTextField.delegate = self;
-
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self phoneNumberTextFieldSetup];
+    [self passwordTextFieldSetup];
     [self loginButtonSetup];
 
 //    [self.signUpButton setAttributedTitle:[self underLineTextString:@"Sign up."] forState:UIControlStateNormal];
+}
+
+- (void)phoneNumberTextFieldSetup {
+    self.phoneNumberTextField.delegate = self;
+    
+    NSAttributedString *phoneNumberStr = [[NSAttributedString alloc] initWithString:@"   Phone Number" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:1.0 alpha:0.8] }];
+    self.phoneNumberTextField.attributedPlaceholder = phoneNumberStr;
+}
+
+- (void)passwordTextFieldSetup {
+    self.passwordTextField.delegate = self;
+    
+    NSAttributedString *passwordStr = [[NSAttributedString alloc] initWithString:@"   Password" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:1.0 alpha:0.8] }];
+    self.passwordTextField.attributedPlaceholder = passwordStr;
 }
 
 - (void)loginButtonSetup {
@@ -42,13 +55,17 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    if (![self.usernameTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
+    if (![self.phoneNumberTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
         self.loginButton.enabled = YES;
         [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    } else if (self.phoneNumberTextField.text.length < 1 && self.passwordTextField.text.length < 1) {
+        self.loginButton.enabled = NO;
+        [self.loginButton setTitleColor:[UIColor lightTextColor] forState:UIControlStateNormal];
     }
     return YES;
 }
-//
+
+
 //- (NSMutableAttributedString *)underLineTextString:(NSString *)str
 //{
 //    NSMutableAttributedString *titleString = [[NSMutableAttributedString alloc] initWithString:str];

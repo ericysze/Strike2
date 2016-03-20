@@ -10,17 +10,26 @@
 
 @interface STSignUpViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+
 @end
 
 @implementation STSignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    
+}
+
+- (void)phoneNumberTextFieldSetup {
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"   Phone Number" attributes: @{ NSForegroundColorAttributeName : [UIColor colorWithWhite:0.8 alpha:1.0] }];
+    self.phoneNumberTextField.attributedPlaceholder = str;
+
 }
 
 - (IBAction)signInButtonTapped:(UIButton *)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
