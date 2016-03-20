@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
+
 @property (strong, nonatomic) UIView *indentView;
 @property (nonatomic, assign) id currentResponder;
 
@@ -30,12 +31,17 @@
     [self phoneNumberTextFieldSetup];
     [self passwordTextFieldSetup];
     [self loginButtonSetup];
-    
-
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignOnTap:)];
-    [self.view addGestureRecognizer:singleTap];
+    [self tapGestureToDismissKeyboard];
     
 //    [self.signUpButton setAttributedTitle:[self underLineTextString:@"Sign up."] forState:UIControlStateNormal];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    CALayer *topBorder = [CALayer layer];
+    topBorder.frame = CGRectMake(0.0f, 0.0f, self.signUpButton.frame.size.width, 0.3f);
+    topBorder.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5].CGColor;
+    [self.signUpButton.layer addSublayer:topBorder];
 }
 
 - (void)phoneNumberTextFieldSetup {
@@ -80,6 +86,11 @@
     return YES;
 }
 
+#pragma mark - Tap Gesture Dismiss Keyboard
+- (void)tapGestureToDismissKeyboard {
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignOnTap:)];
+    [self.view addGestureRecognizer:singleTap];
+}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.currentResponder = textField;
