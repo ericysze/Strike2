@@ -6,9 +6,10 @@
 //  Copyright © 2016 myApps. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "STSignInViewController.h"
+#import "STSignUpViewController.h"
 
-@interface ViewController () <UITextFieldDelegate>
+@interface STSignInViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -17,17 +18,18 @@
 
 @end
 
-@implementation ViewController
+@implementation STSignInViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
-    
+
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self loginButtonSetup];
 
-//    [self.signUpButton setAttributedTitle:[self underLineTextString:@"Don't have an account? Sign up."] forState:UIControlStateNormal];
+//    [self.signUpButton setAttributedTitle:[self underLineTextString:@"Sign up."] forState:UIControlStateNormal];
 }
 
 - (void)loginButtonSetup {
@@ -46,7 +48,7 @@
     }
     return YES;
 }
-
+//
 //- (NSMutableAttributedString *)underLineTextString:(NSString *)str
 //{
 //    NSMutableAttributedString *titleString = [[NSMutableAttributedString alloc] initWithString:str];
@@ -57,7 +59,8 @@
 //}
 
 - (IBAction)signUpButtonTapped:(UIButton *)sender {
-    
+    STSignUpViewController *signUpVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpViewController"];
+    [[self navigationController] pushViewController:signUpVC animated:YES];
 }
 
 @end
