@@ -76,7 +76,7 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    if (![self.phoneNumberTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
+    if (self.phoneNumberTextField.text.length > 0 && self.passwordTextField.text.length > 0) {
         self.loginButton.enabled = YES;
         [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     } else if (self.phoneNumberTextField.text.length < 1 && self.passwordTextField.text.length < 1) {

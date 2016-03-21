@@ -14,6 +14,7 @@
 		1593E9E81C9C0B4400C304F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1593E9E71C9C0B4400C304F8 /* Assets.xcassets */; };
 		1593E9EB1C9C0B4400C304F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1593E9E91C9C0B4400C304F8 /* LaunchScreen.storyboard */; };
 		1593E9F71C9E7C1C00C304F8 /* STSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1593E9F61C9E7C1C00C304F8 /* STSignUpViewController.m */; };
+		1593E9FA1C9F9C0C00C304F8 /* STUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1593E9F91C9F9C0C00C304F8 /* STUserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		1593E9EC1C9C0B4400C304F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1593E9F51C9E7C1C00C304F8 /* STSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSignUpViewController.h; sourceTree = "<group>"; };
 		1593E9F61C9E7C1C00C304F8 /* STSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSignUpViewController.m; sourceTree = "<group>"; };
+		1593E9F81C9F9C0C00C304F8 /* STUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUserViewController.h; sourceTree = "<group>"; };
+		1593E9F91C9F9C0C00C304F8 /* STUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				1593E9E21C9C0B4400C304F8 /* STSignInViewController.m */,
 				1593E9F51C9E7C1C00C304F8 /* STSignUpViewController.h */,
 				1593E9F61C9E7C1C00C304F8 /* STSignUpViewController.m */,
+				1593E9F81C9F9C0C00C304F8 /* STUserViewController.h */,
+				1593E9F91C9F9C0C00C304F8 /* STUserViewController.m */,
 				1593E9E41C9C0B4400C304F8 /* Main.storyboard */,
 				1593E9E71C9C0B4400C304F8 /* Assets.xcassets */,
 				1593E9E91C9C0B4400C304F8 /* LaunchScreen.storyboard */,
@@ -154,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1593E9FA1C9F9C0C00C304F8 /* STUserViewController.m in Sources */,
 				1593E9E31C9C0B4400C304F8 /* STSignInViewController.m in Sources */,
 				1593E9E01C9C0B4400C304F8 /* AppDelegate.m in Sources */,
 				1593E9DD1C9C0B4400C304F8 /* main.m in Sources */,
