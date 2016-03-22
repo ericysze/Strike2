@@ -1,7 +1,7 @@
 # Strike2
 
-Strike allows the user to:
-  - remotely unlock your door with their iPhone 
+Strike allows its user to:
+  - remotely unlock their door with their iPhone 
 
 
 10 second video of protoype in action:
