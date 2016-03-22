@@ -22,17 +22,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self setupButton];
+}
+
+- (void)setupButton {
+    self.unlockLockButton.layer.cornerRadius = 75;
+    self.unlockLockButton.layer.borderWidth = 3;
+    self.unlockLockButton.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (IBAction)unlockLockButtonTapped:(UIButton *)sender {
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-    [self.unlockLockButton addGestureRecognizer:longPress];
+    self.lockedUnlockedLabel.text = @"UNLOCKED";
+    self.holdToUnlockLockLabel.text = @"RELEASE TO LOCK";
+    
+    UILongPressGestureRecognizer *longPressEnded = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressEnded:)];
+    [self.unlockLockButton addGestureRecognizer:longPressEnded];
 }
 
-- (void)longPress:(UILongPressGestureRecognizer*)gesture {
+- (void)longPressEnded:(UILongPressGestureRecognizer *)gesture {
     if (gesture.state == UIGestureRecognizerStateEnded) {
         NSLog(@"Long Press");
+        self.lockedUnlockedLabel.text = @"LOCKED";
+        self.holdToUnlockLockLabel.text = @"HOLD TO UNLOCK";
     }
 }
 

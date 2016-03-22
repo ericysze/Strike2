@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sga-H4-sen">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BPE-dy-O2e">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -218,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLk-hV-or3">
-                                <rect key="frame" x="225" y="450" width="150" height="150"/>
+                                <rect key="frame" x="225" y="432" width="150" height="150"/>
                                 <color key="backgroundColor" red="1" green="0.36284354237236949" blue="0.37617228064147512" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="gTG-1Z-Juc"/>
@@ -226,17 +226,17 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                 <connections>
-                                    <action selector="unlockLockButtonTapped:" destination="BPE-dy-O2e" eventType="touchUpInside" id="TNe-Z1-2Cs"/>
+                                    <action selector="unlockLockButtonTapped:" destination="BPE-dy-O2e" eventType="touchDown" id="Lpm-ms-NId"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCKED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynS-an-rau">
-                                <rect key="frame" x="252" y="373" width="95" height="27"/>
+                                <rect key="frame" x="252" y="355" width="95" height="27"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOLD TO UNLOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bg-YI-Op0">
-                                <rect key="frame" x="230.5" y="413.5" width="140.5" height="18.5"/>
+                                <rect key="frame" x="230.5" y="395.5" width="140.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -246,6 +246,7 @@
                         <constraints>
                             <constraint firstItem="JLk-hV-or3" firstAttribute="centerX" secondItem="k8q-Qo-3NQ" secondAttribute="centerX" id="Dly-lD-eIj"/>
                             <constraint firstItem="JLk-hV-or3" firstAttribute="top" secondItem="6Bg-YI-Op0" secondAttribute="bottom" constant="18" id="LHu-97-ua9"/>
+                            <constraint firstItem="ru2-DZ-CjQ" firstAttribute="top" secondItem="JLk-hV-or3" secondAttribute="bottom" constant="18" id="Lfx-1c-icy"/>
                             <constraint firstItem="ynS-an-rau" firstAttribute="centerX" secondItem="k8q-Qo-3NQ" secondAttribute="centerX" id="Qyw-VN-dVC"/>
                             <constraint firstItem="ru2-DZ-CjQ" firstAttribute="top" secondItem="JLk-hV-or3" secondAttribute="bottom" id="XM7-Al-SWR"/>
                             <constraint firstItem="6Bg-YI-Op0" firstAttribute="top" secondItem="ynS-an-rau" secondAttribute="bottom" constant="13" id="kv4-vA-umc"/>
@@ -256,6 +257,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="qnN-Yg-pNp"/>
+                                <exclude reference="XM7-Al-SWR"/>
                                 <exclude reference="vQx-mE-uxY"/>
                             </mask>
                         </variation>
