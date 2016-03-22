@@ -41,6 +41,10 @@
     [self.signInButton.layer addSublayer:topBorder];
 }
 
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 - (void)phoneNumberTextFieldSetup {
     self.phoneNumberTextField.delegate = self;
     

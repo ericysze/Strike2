@@ -33,7 +33,11 @@
     [self loginButtonSetup];
     [self tapGestureToDismissKeyboard];
     
-//    [self.signUpButton setAttributedTitle:[self underLineTextString:@"Sign up."] forState:UIControlStateNormal];
+//    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+//        // iOS 7
+//        [self prefersStatusBarHidden];
+//        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+//    }
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -42,6 +46,10 @@
     topBorder.frame = CGRectMake(0.0f, 0.0f, self.signUpButton.frame.size.width, 0.3f);
     topBorder.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5].CGColor;
     [self.signUpButton.layer addSublayer:topBorder];
+}
+
+- (BOOL)prefersStatusBarHidden{
+    return YES;
 }
 
 - (void)phoneNumberTextFieldSetup {
