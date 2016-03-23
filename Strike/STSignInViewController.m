@@ -109,17 +109,6 @@
     [self.currentResponder resignFirstResponder];
 }
 
-
-
-//- (NSMutableAttributedString *)underLineTextString:(NSString *)str
-//{
-//    NSMutableAttributedString *titleString = [[NSMutableAttributedString alloc] initWithString:str];
-//    
-//    [titleString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:15.0] range:NSMakeRange(0, [titleString length])];
-//    
-//    return titleString;
-//}
-
 - (IBAction)signUpButtonTapped:(UIButton *)sender {
     STSignUpViewController *signUpVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpViewController"];
     [[self navigationController] pushViewController:signUpVC animated:YES];

@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *holdToUnlockLockLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *unlockLockButtonViewContainer;
+
 @property (weak, nonatomic) IBOutlet UIButton *unlockLockButton;
 
 @end
@@ -23,7 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self setupUnlockLockButtonViewContainer];
     [self setupButton];
+}
+
+- (void)setupUnlockLockButtonViewContainer {
+    self.unlockLockButtonViewContainer.layer.cornerRadius = 75;
 }
 
 - (void)setupButton {

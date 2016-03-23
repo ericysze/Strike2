@@ -34,60 +34,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLk-hV-or3">
-                                <rect key="frame" x="225" y="432" width="150" height="150"/>
-                                <color key="backgroundColor" red="1" green="0.36284354237236949" blue="0.37617228064147512" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="gTG-1Z-Juc"/>
-                                    <constraint firstAttribute="height" constant="150" id="nVV-lT-hrJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
-                                <connections>
-                                    <action selector="unlockLockButtonTapped:" destination="BPE-dy-O2e" eventType="touchDown" id="Lpm-ms-NId"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCKED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynS-an-rau">
-                                <rect key="frame" x="252" y="355" width="95" height="27"/>
+                                <rect key="frame" x="252" y="360" width="95" height="27"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOLD TO UNLOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bg-YI-Op0">
-                                <rect key="frame" x="230.5" y="395.5" width="140.5" height="18.5"/>
+                                <rect key="frame" x="230" y="400" width="140.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="possible 300 x 300 area for photo/video feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndM-Zq-HEE">
+                                <rect key="frame" x="127" y="289" width="345" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHK-T9-Y0f">
+                                <rect key="frame" x="-1" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="lgy-2I-kVm">
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Bdr-Bx-Jnf"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-eT-v9s" userLabel="Unlock Lock Button View Container">
+                                <rect key="frame" x="222.5" y="432" width="155" height="155"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLk-hV-or3">
+                                        <rect key="frame" x="2.5" y="2.5" width="150" height="150"/>
+                                        <color key="backgroundColor" red="1" green="0.36284354237236949" blue="0.37617228064147512" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="gTG-1Z-Juc"/>
+                                            <constraint firstAttribute="height" constant="150" id="nVV-lT-hrJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                        <connections>
+                                            <action selector="unlockLockButtonTapped:" destination="BPE-dy-O2e" eventType="touchDown" id="Lpm-ms-NId"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.42186631099999999" blue="0.43531188100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JLk-hV-or3" firstAttribute="centerX" secondItem="oMe-eT-v9s" secondAttribute="centerX" id="9tS-IW-e6r"/>
+                                    <constraint firstAttribute="height" constant="155" id="liy-Vj-HDq"/>
+                                    <constraint firstAttribute="width" constant="155" id="thP-ik-nty"/>
+                                    <constraint firstItem="JLk-hV-or3" firstAttribute="centerY" secondItem="oMe-eT-v9s" secondAttribute="centerY" id="z1W-Z3-ffS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JLk-hV-or3" firstAttribute="centerX" secondItem="k8q-Qo-3NQ" secondAttribute="centerX" id="Dly-lD-eIj"/>
-                            <constraint firstItem="JLk-hV-or3" firstAttribute="top" secondItem="6Bg-YI-Op0" secondAttribute="bottom" constant="18" id="LHu-97-ua9"/>
-                            <constraint firstItem="ru2-DZ-CjQ" firstAttribute="top" secondItem="JLk-hV-or3" secondAttribute="bottom" constant="18" id="Lfx-1c-icy"/>
+                            <constraint firstItem="ndM-Zq-HEE" firstAttribute="centerY" secondItem="k8q-Qo-3NQ" secondAttribute="centerY" id="8gt-5O-iOD"/>
+                            <constraint firstItem="oMe-eT-v9s" firstAttribute="centerX" secondItem="k8q-Qo-3NQ" secondAttribute="centerX" id="DGM-Y0-bTe"/>
+                            <constraint firstItem="ndM-Zq-HEE" firstAttribute="centerX" secondItem="k8q-Qo-3NQ" secondAttribute="centerX" id="MHF-0I-x20"/>
                             <constraint firstItem="ynS-an-rau" firstAttribute="centerX" secondItem="k8q-Qo-3NQ" secondAttribute="centerX" id="Qyw-VN-dVC"/>
-                            <constraint firstItem="ru2-DZ-CjQ" firstAttribute="top" secondItem="JLk-hV-or3" secondAttribute="bottom" id="XM7-Al-SWR"/>
+                            <constraint firstItem="oMe-eT-v9s" firstAttribute="top" secondItem="6Bg-YI-Op0" secondAttribute="bottom" constant="13.5" id="elr-x0-u2y"/>
                             <constraint firstItem="6Bg-YI-Op0" firstAttribute="top" secondItem="ynS-an-rau" secondAttribute="bottom" constant="13" id="kv4-vA-umc"/>
-                            <constraint firstItem="JLk-hV-or3" firstAttribute="top" secondItem="ynS-an-rau" secondAttribute="bottom" constant="20" id="qnN-Yg-pNp"/>
-                            <constraint firstItem="ru2-DZ-CjQ" firstAttribute="top" secondItem="JLk-hV-or3" secondAttribute="bottom" id="vQx-mE-uxY"/>
+                            <constraint firstItem="ru2-DZ-CjQ" firstAttribute="top" secondItem="oMe-eT-v9s" secondAttribute="bottom" constant="13" id="x43-9m-KyW"/>
                             <constraint firstItem="6Bg-YI-Op0" firstAttribute="centerX" secondItem="k8q-Qo-3NQ" secondAttribute="centerX" id="z6U-Sl-ha9"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="qnN-Yg-pNp"/>
-                                <exclude reference="XM7-Al-SWR"/>
-                                <exclude reference="vQx-mE-uxY"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="holdToUnlockLockLabel" destination="6Bg-YI-Op0" id="Y7O-KI-CNb"/>
                         <outlet property="lockedUnlockedLabel" destination="ynS-an-rau" id="h6A-rm-7hE"/>
                         <outlet property="unlockLockButton" destination="JLk-hV-or3" id="kSH-KD-bSh"/>
+                        <outlet property="unlockLockButtonViewContainer" destination="oMe-eT-v9s" id="wd2-3V-npa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEP-Mx-9Vd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="429"/>
+            <point key="canvasLocation" x="1122" y="429"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="r4f-CY-ghX">
